@@ -32,8 +32,7 @@ class LoginAndSignupBtn extends StatelessWidget {
                   );
                 },
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+                  padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                   child: Text(
                     "Login".toUpperCase(),
                   ),
@@ -61,8 +60,7 @@ class LoginAndSignupBtn extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryLightColor, elevation: 0),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+                padding: const EdgeInsets.symmetric(vertical: defaultPadding),
                 child: Text(
                   "Sign Up".toUpperCase(),
                   style: const TextStyle(color: Colors.black),

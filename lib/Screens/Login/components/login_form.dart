@@ -11,6 +11,7 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       child: Column(
         children: [
@@ -45,10 +46,20 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           Hero(
             tag: "login_btn",
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Login".toUpperCase(),
+            child: SizedBox(
+              width: size.width,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(29),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: defaultPadding),
+                    child: Text(
+                      "Login".toUpperCase(),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

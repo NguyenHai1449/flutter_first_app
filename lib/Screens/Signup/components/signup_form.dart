@@ -11,6 +11,7 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       child: Column(
         children: [
@@ -43,9 +44,18 @@ class SignUpForm extends StatelessWidget {
             ),
           ),
           const SizedBox(height: defaultPadding / 2),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Sign Up".toUpperCase()),
+          SizedBox(
+            width: size.width,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(29),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: defaultPadding),
+                    child: Text("Sign Up".toUpperCase())),
+              ),
+            ),
           ),
           const SizedBox(height: defaultPadding),
           AlreadyHaveAnAccountCheck(

@@ -11,43 +11,64 @@ class LoginAndSignupBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       children: [
         Hero(
           tag: "login_btn",
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const LoginScreen();
-                  },
+          child: SizedBox(
+            width: size.width,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(29),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const LoginScreen();
+                      },
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+                  child: Text(
+                    "Login".toUpperCase(),
+                  ),
                 ),
-              );
-            },
-            child: Text(
-              "Login".toUpperCase(),
+              ),
             ),
           ),
         ),
         const SizedBox(height: 16),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return const SignUpScreen();
-                },
+        SizedBox(
+          width: size.width,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(29),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SignUpScreen();
+                    },
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: kPrimaryLightColor, elevation: 0),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+                child: Text(
+                  "Sign Up".toUpperCase(),
+                  style: const TextStyle(color: Colors.black),
+                ),
               ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-              backgroundColor: kPrimaryLightColor, elevation: 0),
-          child: Text(
-            "Sign Up".toUpperCase(),
-            style: const TextStyle(color: Colors.black),
+            ),
           ),
         ),
       ],

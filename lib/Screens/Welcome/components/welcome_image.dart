@@ -1,3 +1,4 @@
+import 'package:first_app/widgets/heading_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,10 +13,7 @@ class WelcomeImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "WELCOME TO FIRST APP",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        const HeadingText('WELCOME TO FIRST APP', maxLines: 2),
         const SizedBox(height: defaultPadding * 2),
         Row(
           children: [
